@@ -1,0 +1,5 @@
+**/*.class
+
+.vscode/
+
+target/classes/HighScores.json
