@@ -25,6 +25,7 @@ play the Brick Game with:
 
 ```shell
 git clone https://github.com/marcantonio64/brickgameJava.git
+cd brickgameJava
 .\mvnw.cmd clean install
 java -jar brickgame.jar
 ```
@@ -32,6 +33,7 @@ java -jar brickgame.jar
 ### Unix based systems
 ```shell
 git clone https://github.com/marcantonio64/brickgameJava.git
+cd brickgameJava
 ./mvnw clean install
 java -jar brickgame.jar
 ```
