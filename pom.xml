@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.brickgame</groupId>
-  <artifactId>brickgameJava</artifactId>
+  <artifactId>brickgame_java</artifactId>
   <version>1.0</version>
 
-  <name>brickgameJava</name>
+  <name>brickgame_java</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

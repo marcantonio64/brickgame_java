@@ -87,14 +87,14 @@ public interface Constants {
          * @return         The full path of {@code fileName}.
          */ 
         static String getDir(String fileName) {
-            String innerPath = "brickgameJava/src/main/resources/" + fileName;
+            String innerPath = "brickgame_java/src/main/resources/" + fileName;
             try {
                 String currClassDir = Constants.class.getProtectionDomain()
                                                      .getCodeSource()
                                                      .getLocation()
                                                      .toURI()
                                                      .getPath();
-                int dirIndex = currClassDir.indexOf("brickgameJava");
+                int dirIndex = currClassDir.indexOf("brickgame_java");
                 String outerPath = currClassDir.substring(0, dirIndex);
                 // Remove the leading '/' for Windows paths.
                 if (System.getProperty("os.name").startsWith("Windows")) {

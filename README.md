@@ -14,8 +14,8 @@ to form `Block` pixels for the construction of each game.
   `Sprite` to create an illusion of movement.
 
 A manual with the rules and controls of each game can be found on
-`...\brickgameJava\docs\GameManuals.md`. Instructions for adding more games can
-be seen on `...\brickgameJava\docs\UserGuide.md`.
+`...\brickgame_java\docs\GameManuals.md`. Instructions for adding more games can
+be seen on `...\brickgame_java\docs\UserGuide.md`.
 
 ## Installation
 In the command line, after setting up your directory, download and
@@ -24,16 +24,16 @@ play the Brick Game with:
 ### Windows
 
 ```shell
-git clone https://github.com/marcantonio64/brickgameJava.git
-cd brickgameJava
+git clone https://github.com/marcantonio64/brickgame_java.git
+cd brickgame_java
 .\mvnw.cmd clean install
 java -jar brickgame.jar
 ```
 
 ### Unix based systems
 ```shell
-git clone https://github.com/marcantonio64/brickgameJava.git
-cd brickgameJava
+git clone https://github.com/marcantonio64/brickgame_java.git
+cd brickgame_java
 ./mvnw clean install
 java -jar brickgame.jar
 ```
@@ -41,7 +41,7 @@ java -jar brickgame.jar
 Alternatively, if your IDE supports Maven, you can directly
 [download](https://github.com/marcantonio64/brickgameJava) the
 compressed project, extract it, and then run the
-`brickgameJava\src\main\java\com\brickgame\Main.java` file through the IDE.
+`brickgame_java\src\main\java\com\brickgame\Main.java` file through the IDE.
 
 Keep in mind that changes in the contents of the project do not reflect
 immediately into `brickgame.jar`, and you will need to run

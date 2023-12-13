@@ -75,7 +75,7 @@ them from reaching the bottom of the grid.
 A `Bomb` may occasionally appear to help you.
 
 > To deactivate the `Bomb` mechanics, access the file
-> `...\brickgameJava\src\main\java\com\brickgame\games\Asteroids.java` and change the value of the static field constant
+> `...\brickgame_java\src\main\java\com\brickgame\games\Asteroids.java` and change the value of the static field constant
 > `Asteroids.USE_BOMBS` to `false`.
 
 ### Keybindings

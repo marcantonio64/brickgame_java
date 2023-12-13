@@ -4,13 +4,13 @@ Instructions on how to expand the project.
 
 ## Adding more games/updating
 
-New game modules should be in `...\brickgameJava\src\main\java\com\brickgame\games`
+New game modules should be in `...\brickgame_java\src\main\java\com\brickgame\games`
 
 The general rules for consistency are:
 
 ### Import statements
 The general game structure is defined at 
-`...\brickgameJava\src\main\java\com\brickgame\games\GameEngine.java`
+`...\brickgame_java\src\main\java\com\brickgame\games\GameEngine.java`
 
 For a new game, the standard heading is:
 
@@ -29,7 +29,7 @@ You may also import any library of your preference.
   
 ### Class structure
 The class containing the new game should implement `GameEngine` and 
-be imported into `...brickgameJava\src\main\java\com\brickgame\Main.java`
+be imported into `...brickgame_java\src\main\java\com\brickgame\Main.java`
 
 The class may follow this template:
 
@@ -49,7 +49,7 @@ public class NewGame extends GameEngine {
     public NewGame() {
         super();
         // Setting containers for the entities.
-        setEntities("first_entity", "second_entity");
+        setEntities("firstEntity", "secondEntity");
         // ...
     }
 
@@ -60,8 +60,8 @@ public class NewGame extends GameEngine {
         // TODO: Initialize fields.
         // ...
         // Spawning the entities.
-        this.first_entity = First();
-        this.second_entity = Second();
+        this.firstEntity = First();
+        this.secondEntity = Second();
     }
     
     /**
@@ -212,12 +212,12 @@ public class NewGame extends GameEngine {
 
 ```
 
-### Updates in `...\brickgameJava\src\main\java\com\brickgame\Main.java`
+### Updates in `...\brickgame_java\src\main\java\com\brickgame\Main.java`
 Some changes need to be made in order to properly load the game 
 when running the full package:
-* Import the game into `...\brickgameJava\src\main\java\com\brickgame\Main.java`
+* Import the game into `...\brickgame_java\src\main\java\com\brickgame\Main.java`
   with `import com.brickgame.games.NewGame;`
-* Update the file `...\brickgameJava\src\main\resources\HighScores.json` by 
+* Update the file `...\brickgame_java\src\main\resources\HighScores.json` by 
   changing the `Main.createHighScores()` method, adding 
   `highScores.put("NewGame", 0);` in the `try` statement (around line 36).
   Before:
@@ -269,7 +269,7 @@ when running the full package:
   this.gameSelect.put(5, new NewGame());
   ```
   
-### Updates in `...\brickgameJava\src\main\java\com\brickgame\screens\GamePreviews.java`
+### Updates in `...\brickgame_java\src\main\java\com\brickgame\screens\GamePreviews.java`
 The image previews for each game are built and drawn when running 
 the game using the `GamePreviews.java` file. To create the 
 previews for the new game, you will need to add three new nested 
