@@ -18,7 +18,6 @@ public class VictoryScreen extends Background {
         sketch.put(4,  new int[] {      2,       5, 6, 7, 8, 9});
         sketch.put(5,  new int[] {0, 1, 2,       5, 6,    8, 9});
         
-        sketch.put(5,  new int[] {0, 1, 2,       5, 6,    8, 9});
         sketch.put(7,  new int[] {0, 1, 2,          6, 7, 8   });
         sketch.put(8,  new int[] {0,    2,             7      });
         sketch.put(9,  new int[] {0,    2,             7      });

@@ -9,7 +9,6 @@ import static com.brickgame.Constants.*;
 
 /** Defines the appearance and the positioning of unit cells. */
 public class Sprite extends JPanel {
-    public boolean active;
     private ArrayList<Integer> coordinates;
     private JPanel canvas;
 
@@ -30,13 +29,11 @@ public class Sprite extends JPanel {
         setBackground(color);
         this.coordinates = createPosition(i, j);
         this.canvas = canvas;
-        this.active = true;
         place();
     }
 
     /**
-     * A constructor without the {@code color} and {@code sourceFile}
-     * parameters.
+     * A constructor without the {@code color} parameter.
      * <p>
      * {@code color} is standardized to the constant
      * {@link Constants#LINE_COLOR LINE_COLOR}.
@@ -97,7 +94,7 @@ public class Sprite extends JPanel {
         g2.setColor(BACK_COLOR);
         // Setting outline width (stroke width).
         g2.setStroke(new BasicStroke(PIXEL_SIDE));
-        // Drawing the outline (withhaving added a correction term).
+        // Drawing the outline (having added a correction term).
         g2.drawRect(PIXEL_SIDE+PIXEL_SIDE/2, PIXEL_SIDE+PIXEL_SIDE/2, side, side);
         // Freeing the memory.
         g2.dispose();

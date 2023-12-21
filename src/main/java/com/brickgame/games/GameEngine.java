@@ -63,7 +63,7 @@ public abstract class GameEngine {
         back.show();
     }
 
-    /** Removes all elements from the screen and start again. */
+    /** Removes all elements from the screen and starts again. */
     public void reset() {
         running = false;
         // Clear the groups.
@@ -151,7 +151,7 @@ public abstract class GameEngine {
             if (score >= 1e8) {
                 score = (int)1e8 - 1;
             } else {
-                highestScore = (int)score;
+                highestScore = score;
             }
             scores.put(name, highestScore);
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -159,7 +159,7 @@ public abstract class GameEngine {
             try (FileWriter writer = new FileWriter(HIGH_SCORES_DIR)) {
                 writer.write(jsonString);
             } catch (IOException e) {
-                System.out.println("Failed to update 'HighScores.json'.");
+                System.out.println("Failed to update HighScores.json.");
                 e.printStackTrace();
             }
         }
@@ -206,15 +206,13 @@ public abstract class GameEngine {
      * @param t A timer.
      */
     public void update(int t) {
-        if (!paused) {
-            if (entities == null) {
-                return;
-            }
-            for (Map.Entry<String, List<Block>> entry : entities.entrySet()) {
-                for (Block entity : entry.getValue()) {
-                    if (entity instanceof BlinkingBlock) {
-                        entity.blink(t);
-                    }
+        if (paused || entities == null) {
+            return;
+        }
+        for (Map.Entry<String, List<Block>> entry : entities.entrySet()) {
+            for (Block entity : entry.getValue()) {
+                if (entity instanceof BlinkingBlock) {
+                    entity.blink(t);
                 }
             }
         }

@@ -3,7 +3,6 @@ package com.brickgame.tests;
 import java.util.Random;
 import static com.brickgame.Constants.*;
 import com.brickgame.Client;
-import com.brickgame.Constants.Direction;
 import com.brickgame.block.*;
 import com.brickgame.games.GameEngine;
 
@@ -58,7 +57,7 @@ public class testGameEngine {
             public void setLoop() {
                 //System.out.println(game+", "+0);
                 super.setLoop();
-                // Implementing the game mechanics and check for endgame.
+                // Implementing the game mechanics and checking for endgame.
                 game.manage(ticks);
                 // Drawing the game's objects to the screen.
                 game.drawEntities();

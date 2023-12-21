@@ -4,7 +4,6 @@ import java.util.*;
 import java.awt.event.*;
 import static com.brickgame.Constants.*;
 import com.brickgame.Client;
-import com.brickgame.Constants.Direction;
 import com.brickgame.block.*;
 
 /**
@@ -259,7 +258,7 @@ public class Asteroids extends GameEngine {
      */
     private class Shooter extends Block {
         List<Bullet> bullets;
-        /** Sets {@link Shooter}'s initial position */
+        /** Sets {@link Shooter}'s initial position. */
         Shooter() {
             super(4, 19);
             ArrayList<Block> list = new ArrayList<>();
@@ -317,7 +316,7 @@ public class Asteroids extends GameEngine {
             @Override
             public void setLoop() {
                 super.setLoop();
-                // Implementing the game mechanics and check for endgame.
+                // Implementing the game mechanics and checking for endgame.
                 game.manage(ticks);
                 // Drawing the game objects to the screen.
                 game.drawEntities();

@@ -5,7 +5,6 @@ import java.awt.event.*;
 import static com.brickgame.Constants.*;
 import static com.brickgame.screens.Sprite.createPosition;
 import com.brickgame.Client;
-import com.brickgame.Constants.Direction;
 import com.brickgame.block.Block;
 
 /**
@@ -436,7 +435,7 @@ public class Tetris extends GameEngine {
         /**
          * Where to move the {@link Paddle}.
          * 
-         * @param direction One of {@code Direction.UP}, {@code Direction.DOWN},
+         * @param direction One of {@code Direction.DOWN},
          *                  {@code Direction.LEFT}, {@code Direction.RIGHT}.
          */
         void setDirection(Direction direction) {
@@ -446,7 +445,7 @@ public class Tetris extends GameEngine {
         /**
          * Checks if there are obstacles for movement, moves if not.
          * 
-         * @param direction One of {@code Direction.UP}, {@code Direction.DOWN},
+         * @param direction One of {@code Direction.DOWN},
          *                  {@code Direction.LEFT}, {@code Direction.RIGHT}.
          */
         void move(Direction direction) {
@@ -479,7 +478,7 @@ public class Tetris extends GameEngine {
                 /* Checking also if the movement won't get any Block
                  * outside the grid. */
                 if (0 <= iMin+a && iMax+a < 10 && jMax+b < 20) {
-                    // Updating rotatingMap.
+                    // Updating rotationMap.
                     place(activeShape, i+a, j+b);
                     // Making the movement.
                     for (Block block : blocks) {
@@ -528,7 +527,7 @@ public class Tetris extends GameEngine {
                 entities.get("piece").clear();
                 // Replacing it with another with the next rotated state.
                 place(activeShape, coordinates[0], coordinates[1]);
-                // Updating rotatingMap the rotating id and drawing the piece's Blocks.
+                // Updating rotationMap, the rotating id, and the drawing of piece's Blocks.
                 nextID = (Integer)rotationMap.get(nextID)[0];
                 blocks = new ArrayList<>();
                 for (int[] coords : (int[][])rotationMap.get(nextID)[1]) {
@@ -633,7 +632,7 @@ public class Tetris extends GameEngine {
             @Override
             public void setLoop() {
                 super.setLoop();
-                // Implementing the game mechanics and check for endgame.
+                // Implementing the game mechanics and checking for endgame.
                 game.manage(ticks);
                 // Drawing the game objects to the screen.
                 game.drawEntities();

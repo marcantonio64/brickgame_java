@@ -58,7 +58,7 @@ public class BaseClient {
         });
     }
 
-    /** Adding functionalities to {@link #canvas}. */
+    /** Adds functionalities to {@link #canvas}. */
     public void setup(){} 
 
     /** Schedules looping events. */

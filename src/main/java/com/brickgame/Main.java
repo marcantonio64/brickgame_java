@@ -31,7 +31,7 @@ public class Main {
             window.setTitle("Game Selection");
         }
 
-        /** Generating the HighScores.json file, if it doesn't already exist. */
+        /** Generates the HighScores.json file, if it doesn't already exist. */
         private static void createHighScores() {
             File file = new File(HIGH_SCORES_DIR);
             try {
@@ -66,7 +66,7 @@ public class Main {
 
             createHighScores();
 
-            // Render the environments.
+            // Rendering the environments.
             this.selector = new Selector();
 
             // Covering everything with the Background.
@@ -82,7 +82,7 @@ public class Main {
                     selector.animateScreen();
                     break;
                 case GAME:
-                    // Implementing the game mechanics and check for endgame.
+                    // Implementing the game mechanics and checking for endgame.
                     game.manage(ticks);
                     // Drawing the game objects to the screen.
                     game.drawEntities();
@@ -108,8 +108,7 @@ public class Main {
                     if (pressed && key == KeyEvent.VK_BACK_SPACE) {
                         environment = E.SELECTOR;
                         window.setTitle("Game Selection");
-                    }
-                    else {  // Shifting to the game keybindings otherwise.
+                    } else {  // Shifting to the game keybindings otherwise.
                         game.setKeyBindings(key, pressed);
                     }
                     break;

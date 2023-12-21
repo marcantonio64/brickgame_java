@@ -5,7 +5,6 @@ import java.awt.event.*;
 import static com.brickgame.Constants.*;
 import static com.brickgame.screens.Sprite.createPosition;
 import com.brickgame.Client;
-import com.brickgame.Constants.Direction;
 import com.brickgame.block.*;
 
 /**
@@ -94,7 +93,7 @@ public class Breakout extends GameEngine {
                 // Setting the action rate at speed Blocks per second.
                 int q = (speed % FPS > 0) ? FPS/(speed % FPS) : 1;
                 if (t % q == 0) {
-                    // Move the ball.
+                    // Moving the ball.
                     ball.move();
 
                     // Checking if ball hit target.
@@ -158,7 +157,7 @@ public class Breakout extends GameEngine {
             // Toggling the next stage.
             System.out.println("Stage " + level + " cleared");
             level += 1;
-            // Adding a score bonus from phase completion.
+            // Adding a bonus score from phase completion.
             score += 3000 + 3000*(level - 1);
             // Constructing the next target.
             target = new Target(level);
@@ -422,7 +421,7 @@ public class Breakout extends GameEngine {
              * launching choice. */
             this.blocks.add(ball);
             
-            /* Tracking coordinates and add to the corresponding group
+            /* Tracking coordinates and adding to the corresponding group
              * for drawing. */
             this.coords = new ArrayList<>();
             for (Block block : this.blocks) {
@@ -458,7 +457,7 @@ public class Breakout extends GameEngine {
             }
 
             /* Launch mechanics at the start of the stage (the ball is
-             * released from the paddle if SPACE is pressed). */
+             * released from the paddle if *Space* is pressed). */
             if (speed > startSpeed) {
                 if (coords.size() > size  // Stage start conditions.
                         && number == total) {
@@ -487,7 +486,7 @@ public class Breakout extends GameEngine {
             int i = ball.getPosition().get(0);
             int j = ball.getPosition().get(1);
             int b = ball.velocity[1];
-            /* Allow for dragging the ball when it hits the paddle
+            /* Allowing for dragging the ball when it hits the paddle
              * from the top. */
             if (coords.subList(0, size)
                       .contains(createPosition(i, j+b))) {
@@ -547,7 +546,7 @@ public class Breakout extends GameEngine {
             super(i, j);
             this.isMoving = false;
             this.velocity = new int[] {0, 0};
-            // Enable drawing.
+            // Enabling drawing.
             entities.get("ball").add(this);
         }
 
@@ -562,10 +561,10 @@ public class Breakout extends GameEngine {
 
         /** Hypothesis for when the ball reflects from the border. */
         void checkBorderReflect() {
-            int i = ball.getPosition().get(0);
-            int j = ball.getPosition().get(1);
-            int a = ball.velocity[0];
-            int b = ball.velocity[1];
+            int i = getPosition().get(0);
+            int j = getPosition().get(1);
+            int a = velocity[0];
+            int b = velocity[1];
             /* Reversing the horizontal coordinate if the ball hits a
              * vertical border. */
             if (i == 0 && a == -1 || i == 9 && a == 1) {
@@ -597,7 +596,7 @@ public class Breakout extends GameEngine {
             @Override
             public void setLoop() {
                 super.setLoop();
-                // Implementing the game mechanics and check for endgame.
+                // Implementing the game mechanics and checking for endgame.
                 game.manage(ticks);
                 // Drawing the game objects to the screen.
                 game.drawEntities();

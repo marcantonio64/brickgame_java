@@ -57,12 +57,12 @@ immediately into `brickgame.jar`, and you will need to run
 (Unix) every time you want to update the `brickgame.jar` file.
 
 ## Metadata
-Author: marcantonio64
+**Author:** [marcantonio64](https://github.com/marcantonio64/)
 
-Contact: mafigueiredo08@gmail.com
+**Contact:** [mafigueiredo08@gmail.com](mailto:mafigueiredo08@gmail.com)
 
-Date: 11-Dec-2023
+**Date:** 11-Dec-2023
 
-License: MIT
+**License:** MIT
 
-Version: OpenJDK1.8
+**Version:** OpenJDK1.8

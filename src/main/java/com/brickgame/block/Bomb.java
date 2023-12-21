@@ -3,7 +3,6 @@ package com.brickgame.block;
 import java.util.*;
 import static com.brickgame.Constants.*;
 import com.brickgame.Client;
-import com.brickgame.Constants.Direction;
 
 /**
  * Used to destroy a target upon collision.
@@ -105,11 +104,11 @@ public class Bomb {
             if (direction == Direction.UP && k < 0  // At the top.
                     || direction == Direction.DOWN && k >= 17) {  // At the bottom.
                 for (Block block : bomb) {
-                    // Erase the drawings.
+                    // Erasing the drawings.
                     block.hide();
                     group.remove(block);
                 }
-                // Remove references.
+                // Removing references.
                 bombsIterator.remove();
             }
         }
@@ -139,6 +138,7 @@ public class Bomb {
                     // Stop if Bomb hits any component of target.
                     erase = true;
                     eraseAny = true;
+                    break;
                 }
             }
             if (erase) {

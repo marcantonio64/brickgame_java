@@ -6,7 +6,6 @@ import static com.brickgame.Constants.*;
 import com.brickgame.screens.Sprite;
 import static com.brickgame.screens.Sprite.createPosition;
 import com.brickgame.Client;
-import com.brickgame.Constants.Direction;
 import com.brickgame.block.*;
 
 /**
@@ -119,7 +118,7 @@ public class Snake extends GameEngine {
         if (snake.head.getPosition().equals(food.getPosition())) {
             growing = true;
             food.respawn();
-            // Avoids the food spawning inside the snake.
+            // Avoiding the food from spawning inside the snake.
             while (snake.coords.stream().anyMatch(coordinates ->
                     coordinates.equals(food.getPosition()))) {
                 food.respawn();
@@ -231,7 +230,7 @@ public class Snake extends GameEngine {
          */
         Food() {
             super(random.nextInt(10), random.nextInt(20));
-            // Add the instance to the container for drawing.
+            // Adding the instance to the container for drawing.
             entities.get("food").clear();
             entities.get("food").add(this);
         }
